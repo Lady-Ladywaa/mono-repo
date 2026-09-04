@@ -2,39 +2,31 @@
 GET http://localhost:3001/api/v1/users
 
 ### Create a new user
-POST http://localhost:3001/api/v1users
+POST http://localhost:3001/api/v1/users
 Content-Type: application/json
 
 {
-    "username": "Ladywa",
-    "email": "ladywa@example.com",
-    "password": "password123"
+    "username": "Charlie",
+    "email": "charlie@example.com",
+    "password": "pass123"
 }
 
 ### Update a user
-PUT http://localhost:3001/api/v1/users/1
+PUT http://localhost:3001/api/v1/users/99
 Content-Type: application/json
 
 {
-    "username": "Ladywa",
-    "email": "ladywad@example.com",
-    "password": "password123"
+    "username": "Nat",
+    "email": "nat@example.com",
+    "password": "newpassword123"
 }
 
 ### Delete a user
 DELETE http://localhost:3001/api/v1/users/1
 
-
-### Trigger centralized error handling middleware
+### Trigger centralize error handling middleware 1
 PUT http://localhost:3001/api/v1/users/1
 
+### Trigger centralize error handling middleware 1
 
-### Create a new user 
-POST http://localhost:3001/api/v1/users
-Content-Type: application/json
 
-{
-    "username": "Ladywa",
-    "email": "ladywa@example.com",
-    "password": "password123"
-}   
