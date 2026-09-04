@@ -1,0 +1,40 @@
+### Read all users
+GET http://localhost:3001/users
+
+### Create a new user
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "username": "Ladywa",
+    "email": "ladywa@example.com",
+    "password": "password123"
+}
+
+### Update a user
+PUT http://localhost:3001/users/1
+Content-Type: application/json
+
+{
+    "username": "Ladywa",
+    "email": "ladywad@example.com",
+    "password": "password123"
+}
+
+### Delete a user
+DELETE http://localhost:3001/users/1
+
+
+### Trigger centralized error handling middleware
+PUT http://localhost:3001/users/1
+
+
+### Create a new user 
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+    "username": "Ladywa",
+    "email": "ladywa@example.com",
+    "password": "password123"
+}   
