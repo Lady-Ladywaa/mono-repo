@@ -9,7 +9,8 @@ app.use(express.json());
 // CRUD routes and endpoints
 
 app.get("/", (req, res) => {
-    return res.send(`<!doctype html>
+    return res.send(`
+        <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
