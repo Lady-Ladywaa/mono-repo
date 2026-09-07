@@ -1,6 +1,7 @@
 import express from "express";
 import { users } from "./fakeDB/fakeUser.js";
 import { router as apiRoutes } from "./routes/index.js";
+import { connectDB } from "./config/db.js";
 
 const app = express();
 
@@ -9,8 +10,7 @@ app.use(express.json());
 // CRUD routes and endpoints
 
 app.get("/", (req, res) => {
-    return res.send(`
-        <!doctype html>
+    return res.send(`<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -186,7 +186,22 @@ app.use((err, req, res, next) => {
 
 const PORT = 3001;
 
-app.listen(PORT, () => {
+async function start() {
+  try {
+    await connectDB();
+
+    app.listen(PORT, () => {
         console.log(`Server is running on PORT:${PORT} 🌏`);
     }
-);
+  );
+
+  } catch (err) {
+    console.error("Failed to connect to MongoDB:", err.message)
+
+    // สั่งปิดถ้า error
+    process.exit(1);
+  }
+};
+
+// invoke start funct
+start();
